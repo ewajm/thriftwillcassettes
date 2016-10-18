@@ -8,5 +8,11 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false
-  }
+  },
+    "filesGlob": [
+    "main.ts",
+    "typings.d.ts",
+    "app/**/*.ts",
+    "!app/**/*.spec.ts"
+  ]
 }
