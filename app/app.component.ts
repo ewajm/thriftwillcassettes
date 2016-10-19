@@ -5,7 +5,9 @@ import { Cd } from './cd.model';
   selector: 'my-app',
   template: `
   <div class="container">
+  <div class="jumbotron">
   <h1>Thriftwill's Cassette &amp; 8-Track Section</h1>
+  </div>
   <div class="row">
     <div class="col-sm-8">
     <cd-list

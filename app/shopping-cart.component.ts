@@ -4,12 +4,17 @@ import { Cd } from './cd.model';
 @Component({
   selector: 'shopping-cart',
   template: `
-    <div *ngFor="let childSelectedCd of childSelectedCdList">
-      <h2>{{ childSelectedCd.name }}</h2>
-      <h2>{{ childSelectedCd.price | currency: 'USD':true:'1.2-2' }}</h2>
+  <div class="well" *ngIf="childSelectedCdList && childSelectedCdList.length > 0">
+    <div class="row" *ngFor="let childSelectedCd of childSelectedCdList">
+      <div class="col-sm-8">
+      <h3>{{ childSelectedCd.name }}</h3>
+      </div>
+      <div class="col-sm-4">
+        <h3> {{ childSelectedCd.price | currency: 'USD':true:'1.2-2' }} </h3>
+      </div>
     </div>
-    <h2 *ngIf="childSelectedCdList && childSelectedCdList.length > 0">Total Price: {{ childSelectedCdList | total | currency: 'USD':true:'1.2-2' }}</h2>
-    <div></div>
+    <h2 class="total">Total Price: {{ childSelectedCdList | total | currency: 'USD':true:'1.2-2' }}</h2>
+  </div>
   `
 })
 

@@ -1,3 +1,46 @@
+body {
+  background-image: url(../../resources/images/background.jpeg);
+  font-family: 'Federo', sans-serif;
+}
+
+select{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  font-size: medium;
+}
+
+.container {
+  background-color: rgba(255,255,255,0.5);
+}
+
+.well {
+  background-color: rgba(255,255,255,0.7);
+}
 h1 {
-  color: blue;
+  text-align: center;
+  font-family: 'Trade Winds', cursive;
+  font-size: 55px;
+}
+
+.jumbotron {
+  background-color: transparent;
+}
+
+.jumbotron h1{
+  color: darkcyan;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 1);
+}
+
+.total {
+  text-align: right;
+}
+
+.col-sm-4 .well {
+  margin-top: 35px;
+}
+
+.checkbox{
+  text-align: right;
+  font-size: large;
 }

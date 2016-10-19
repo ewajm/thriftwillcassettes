@@ -12,9 +12,9 @@ import { Cd } from './cd.model';
     <option value="all">All</option>
     <option *ngFor="let artist of artists"> {{ artist }} </option>
     </select>
-    <div *ngFor="let currentCd of childCdList | genres:selectedGenre | artists:selectedArtist">
+    <div class="well" *ngFor="let currentCd of childCdList | genres:selectedGenre | artists:selectedArtist">
       <cd-display [cd]="currentCd"></cd-display>
-      <input type="checkbox" (click)="addToCart(currentCd)"/> Add To Cart
+      <div class="checkbox"><input type="checkbox" (click)="addToCart(currentCd)"/> Add To Cart</div>
     </div>
   `
 })
