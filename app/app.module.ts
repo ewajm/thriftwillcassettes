@@ -6,6 +6,8 @@ import { CdComponent } from './cd.component';
 import { GenrePipe } from './genres.pipe';
 import { ArtistPipe } from './artists.pipe';
 import { ShoppingCart } from './shopping-cart.component';
+import { TotalPipe } from './total.pipe';
+
 
 @NgModule({
   imports: [BrowserModule],
@@ -15,7 +17,8 @@ import { ShoppingCart } from './shopping-cart.component';
     CdComponent,
     GenrePipe,
     ArtistPipe,
-    ShoppingCart
+    ShoppingCart,
+    TotalPipe
    ],
   bootstrap:    [ AppComponent ]
 })

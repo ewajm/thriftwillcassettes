@@ -10,7 +10,7 @@ import { Cd } from './cd.model';
         <h2>{{ cd.name }}</h2>
         </div>
         <div class="col-sm-3">
-        <h2>{{ cd.price }}</h2>
+        <h2>{{ cd.price | currency: 'USD':true:'1.2-2' }}</h2>
         </div>
       </div>
       <div class="row">
@@ -27,5 +27,5 @@ import { Cd } from './cd.model';
 
 export class CdComponent {
   @Input() cd: Cd;
-  
+
 }
