@@ -32,14 +32,7 @@ export class CdListComponent {
   onChangeArtist(optionFromMenu){
     this.selectedArtist = optionFromMenu;
   }
-  public cdsInCart: Cd[] = [];
   addToCart(selectedCd){
-    if(this.cdsInCart.indexOf(selectedCd) < 0){
-      this.cdsInCart.push(selectedCd)
-    } else {
-      this.cdsInCart.splice(this.cdsInCart.indexOf(selectedCd), 1)
-    }
-    console.log(this.cdsInCart);
-    this.clickSender.emit(this.cdsInCart);
+    this.clickSender.emit(selectedCd);
   }
 }

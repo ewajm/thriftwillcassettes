@@ -20,6 +20,7 @@ import { Cd } from './cd.model';
     <div class="col-sm-4">
     <shopping-cart
       [childSelectedCdList]="selectedCds"
+      (buyClickedSender)="finishedBuying()"
     ></shopping-cart>
     </div>
   </div>
@@ -52,8 +53,8 @@ export class AppComponent {
     return list;
   }
 
-  public artistList:String[] = this.createAuthors();
-  createAuthors(){
+  public artistList:String[] = this.createArtists();
+  createArtists(){
     var list: String[] = [];
     this.masterCdList.forEach(function(cd){
       if(list.indexOf(cd.artist) < 0){
@@ -63,14 +64,20 @@ export class AppComponent {
     return list;
   }
 
-  selectedCds: Cd[] = null;
-  showDetails(clickedCds: Cd[]) {
-    this.selectedCds = clickedCds;
+  selectedCds: Cd[] = [];
+  showDetails(clickedCd: Cd) {
+    if(this.selectedCds.indexOf(clickedCd) < 0){
+      this.selectedCds.push(clickedCd)
+    } else {
+      this.selectedCds.splice(this.selectedCds.indexOf(clickedCd), 1)
+    }
   }
-  finishedEditing() {
-    this.selectedCds = null;
-  }
-  addCd(newCdFromChild: Cd) {
-    this.masterCdList.push(newCdFromChild);
+  finishedBuying() {
+    for(var i = 0; i < this.selectedCds.length; i++){
+      this.masterCdList.splice(this.masterCdList.indexOf(this.selectedCds[i]), 1);
+    }
+    this.selectedCds =  [];
+    this.genreList = this.createGenres();
+    this.artistList = this.createArtists();
   }
 }

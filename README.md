@@ -12,7 +12,7 @@ _Angular 2 template_
 * I would like to be able to display only the albums belonging to a particular genre.
 * I would also like to display only the albums belonging to a particular artist.
 * I would like my users to be able to click a checkbox on each album to either add or remove the item to the shopping cart area of the page.
-* I would like my shopping cart to display the total price of all the albums I have decided to buy. _shopping cart component needs total field/method_
+* I would like my shopping cart to display the total price of all the albums I have decided to buy.
 * I would like my users to be able to click a buy button that will remove the bought cds from the master list. _custom event emitter on buy button in shopping cart_
 * API ?!?!?!
 

@@ -14,11 +14,15 @@ import { Cd } from './cd.model';
       </div>
     </div>
     <h2 class="total">Total Price: {{ childSelectedCdList | total | currency: 'USD':true:'1.2-2' }}</h2>
+    <button (click)="buyClicked()">Buy Music</button>
   </div>
   `
 })
 
 export class ShoppingCart {
   @Input() childSelectedCdList: Cd[];
-
+  @Output() buyClickedSender = new EventEmitter();
+  buyClicked() {
+    this.buyClickedSender.emit();
+  }
 }
