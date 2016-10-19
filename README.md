@@ -1,10 +1,10 @@
-# _Angular Tempate_
+# _Music Store_
 
-#### By _Ewa Manek_
+#### By _Ewa Manek &amp; Elysia Nason_
 
 ## Description
 
-_Angular 2 template_
+_Angular 2 Music Store_
 
 ## Specs
 
@@ -13,7 +13,7 @@ _Angular 2 template_
 * I would also like to display only the albums belonging to a particular artist.
 * I would like my users to be able to click a checkbox on each album to either add or remove the item to the shopping cart area of the page.
 * I would like my shopping cart to display the total price of all the albums I have decided to buy.
-* I would like my users to be able to click a buy button that will remove the bought cds from the master list. 
+* I would like my users to be able to click a buy button that will remove the bought cds from the master list.
 * API ?!?!?!
 
 ## Setup/Installation Requirements
@@ -41,4 +41,4 @@ https://github.com/ewajm/angular2
 
 * MIT
 
-Copyright (c) 2016 **_Ewa Manek_**
+Copyright (c) 2016 **_Ewa Manek &amp; Elysia Nason_**
