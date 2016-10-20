@@ -16,7 +16,6 @@ export class TrackService {
 
   private extractTracks(res: Response){
     let response = res.json();
-    console.log(response);
     var trackList: string[] = [];
     trackList.push(response.album.image[3]["#text"]);
     for(var i = 0; i < response.album.tracks.track.length; i++){

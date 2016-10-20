@@ -22,12 +22,16 @@ import { TrackService } from './tracks.service';
       <h3>{{ cd.genre }}</h3>
       </div>
       <div class="col-sm-4">
-      <h3><button class="btn btn-info" (click)="getTracks(cd.artist, cd.name)">Get Tracks</button></h3>
+      <h3>
+        <button class="btn btn-info" *ngIf="!tracks" (click)="getTracks(cd.artist, cd.name)">Get Tracks</button>
+        <button class="btn btn-info" *ngIf="tracks"  (click)="clearTracks()">Hide Tracks</button>
+      </h3>
       </div>
     </div>
     <div *ngIf="tracks" class="row tracks">
-    <div class="col-sm-6">
-      <h4 *ngFor="let track of tracks.slice(1)">{{track}}</h4>
+      <div class="col-sm-6">
+        <h4 *ngIf="tracks.length === 1">No Tracks Found :(</h4>
+        <h4 *ngFor="let track of tracks.slice(1)">{{track}}</h4>
       </div>
       <div class="col-sm-6 track-img">
         <img src="{{tracks[0]}}" class="img-responsive">
@@ -46,5 +50,9 @@ export class CdComponent {
 
   getTracks(artist, album){
     this.trackService.getTracks(artist, album).subscribe( tracks => this.tracks = tracks, error => this.errorMessage = <any>error);
+  }
+
+  clearTracks(){
+    this.tracks = null;
   }
 }

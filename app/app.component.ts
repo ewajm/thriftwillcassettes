@@ -1,6 +1,7 @@
+import { ViewChild } from '@angular/core';
 import { Component } from '@angular/core';
 import { Cd } from './cd.model';
-
+import { CdListComponent } from './cd-list.component';
 import './rxjs-operators';
 
 @Component({
@@ -30,6 +31,10 @@ import './rxjs-operators';
 })
 
 export class AppComponent {
+
+  @ViewChild(CdListComponent)
+  private cdListComponent: CdListComponent;
+
   masterCdList: Cd[] = [
     new Cd("Best Of Queen", "Queen", .25, "Rawk"),
     new Cd("Best Of Willie Nelson", "Willie Nelson", .25, "Country"),
@@ -81,5 +86,7 @@ export class AppComponent {
     this.selectedCds =  [];
     this.genreList = this.createGenres();
     this.artistList = this.createArtists();
+    this.cdListComponent.selectedGenre = "all";
+    this.cdListComponent.selectedArtist = "all";
   }
 }
