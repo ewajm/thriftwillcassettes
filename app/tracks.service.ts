@@ -5,7 +5,7 @@ import { Observable }     from 'rxjs/Observable';
 
 @Injectable()
 export class TrackService {
-  apiKey = "a6d9b9226d084bcb36e39339ced9fafa";
+  apiKey = "";
   private trackURL = 'http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=' + this.apiKey;
 
   constructor(private http: Http){}
