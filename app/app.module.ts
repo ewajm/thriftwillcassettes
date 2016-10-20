@@ -9,7 +9,8 @@ import { ShoppingCart } from './shopping-cart.component';
 import { TotalPipe } from './total.pipe';
 import { HttpModule } from '@angular/http';
 import { JsonpModule } from '@angular/http';
-
+import { StarPipe } from './stars.pipe';
+import { AveragePipe } from './average.pipe';
 
 @NgModule({
   imports: [
@@ -24,7 +25,9 @@ import { JsonpModule } from '@angular/http';
     GenrePipe,
     ArtistPipe,
     ShoppingCart,
-    TotalPipe
+    TotalPipe,
+    StarPipe,
+    AveragePipe
    ],
   bootstrap:    [ AppComponent ]
 })

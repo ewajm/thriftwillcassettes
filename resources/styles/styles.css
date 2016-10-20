@@ -54,3 +54,8 @@ h1 {
   display: flex;
   align-items: center;
 }
+
+#rating {
+  font-size: 15px;
+  margin-left: 20px;
+}
