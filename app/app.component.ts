@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Cd } from './cd.model';
 
+import './rxjs-operators';
+
 @Component({
   selector: 'my-app',
   template: `
@@ -31,15 +33,15 @@ export class AppComponent {
   masterCdList: Cd[] = [
     new Cd("Best Of Queen", "Queen", .25, "Rawk"),
     new Cd("Best Of Willie Nelson", "Willie Nelson", .25, "Country"),
-    new Cd("A Willie Nelson Christmas", "Willie Nelson", .25, "Country"),
-    new Cd("Willie Nelson's Collaboration Album With Bone Thugz n Harmony", "Willie Nelson", .25, "Hip-Hop"),
-    new Cd("Best Of Neil Young", "Neil Young", .25, "Classic Rawk"),
+    new Cd("Pretty Paper", "Willie Nelson", .25, "Country"),
+    new Cd("Middle Cyclone", "Neko Case", .25, "Alt-Rawk"),
+    new Cd("Greatest Hits", "Neil Young", .25, "Classic Rawk"),
     new Cd("Christmas In The Heart", "Bob Dylan", .25, "Folx"),
-    new Cd("Best Of Dolly", "Dolly Parton", .50, "Country"),
-    new Cd("Best Of Rammstein", "Rammstein", .25, "Metal.. I Guess..."),
-    new Cd("Best Of Bone Thugz n Harmony", "Bone Thugz n Harmony", .25, "Hip-Hop"),
-    new Cd("Best Of America", "America", .20, "Classic Rawk"),
-    new Cd("Best Of Bob Dylan", "Bob Dylan", .25, "Folx")
+    new Cd("Once Upon a Christmas", "Dolly Parton", .50, "Country"),
+    new Cd("The Best", "Rammstein", .25, "Metal.. I Guess..."),
+    new Cd("The Collection Volume One", "Bone Thugs-n-Harmony", .25, "Hip-Hop"),
+    new Cd("The Complete Greatest Hits", "America", .20, "Classic Rawk"),
+    new Cd("Bob Dylan's Greatest Hits", "Bob Dylan", .25, "Folx")
   ];
 
   public genreList: String[] = this.createGenres();

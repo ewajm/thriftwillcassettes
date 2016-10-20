@@ -7,10 +7,16 @@ import { GenrePipe } from './genres.pipe';
 import { ArtistPipe } from './artists.pipe';
 import { ShoppingCart } from './shopping-cart.component';
 import { TotalPipe } from './total.pipe';
+import { HttpModule } from '@angular/http';
+import { JsonpModule } from '@angular/http';
 
 
 @NgModule({
-  imports: [BrowserModule],
+  imports: [
+    BrowserModule,
+    HttpModule,
+    JsonpModule
+  ],
   declarations: [
     AppComponent,
     CdListComponent,

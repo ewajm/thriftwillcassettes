@@ -1,8 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { Cd } from './cd.model';
+import { TrackService } from './tracks.service';
 
 @Component({
   selector: 'cd-display',
+  providers: [TrackService],
   template: `
     <div class="row">
       <div class="col-sm-9">
@@ -13,17 +15,36 @@ import { Cd } from './cd.model';
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-4">
       <h3>{{ cd.artist }}</h3>
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-4">
       <h3>{{ cd.genre }}</h3>
+      </div>
+      <div class="col-sm-4">
+      <h3><button class="btn btn-info" (click)="getTracks(cd.artist, cd.name)">Get Tracks</button></h3>
+      </div>
+    </div>
+    <div *ngIf="tracks" class="row tracks">
+    <div class="col-sm-6">
+      <h4 *ngFor="let track of tracks.slice(1)">{{track}}</h4>
+      </div>
+      <div class="col-sm-6 track-img">
+        <img src="{{tracks[0]}}" class="img-responsive">
       </div>
     </div>
   `
 })
 
 export class CdComponent {
+  errorMessage: string;
   @Input() cd: Cd;
+  tracks: string[];
+  mode = 'Observable';
 
+  constructor(private trackService: TrackService) {}
+
+  getTracks(artist, album){
+    this.trackService.getTracks(artist, album).subscribe( tracks => this.tracks = tracks, error => this.errorMessage = <any>error);
+  }
 }
