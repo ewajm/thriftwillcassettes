@@ -25,7 +25,7 @@ _Angular 2 Music Store_
 
 ## GitHub link
 
-https://github.com/ewajm/angular2
+https://github.com/ewajm/thriftwillcassettes
 
 ## Technologies Used
 
